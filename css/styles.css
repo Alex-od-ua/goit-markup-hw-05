@@ -54,7 +54,7 @@ p {
   padding-bottom: 94px;
 }
 
-/* Шапка общая*/
+/*---------- Шапка общая -----------*/
 
 .page-header {
   border-bottom: 1px solid #ececec;
@@ -88,6 +88,7 @@ p {
 }
 
 .link-style {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -100,6 +101,13 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-style:hover,
+.link-style:focus {
+  color: var(--accent-color);
 }
 
 .contacts {
@@ -124,6 +132,8 @@ p {
 
   color: var(--second-text-color);
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-icon-style {
@@ -137,7 +147,28 @@ p {
   fill: currentColor;
 }
 
-/* Основной контент - главная */
+.link-style::after {
+  content: '';
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #2196f3;
+  border-radius: 2px;
+
+  position: absolute;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.link-style:hover::after,
+.link-style:focus::after {
+  opacity: 1;
+}
+
+/*-------- Основной контент - главная --------*/
 
 .overlay {
   background: #2f303a;
@@ -195,7 +226,7 @@ p {
   color: var(--white-text-color);
 } */
 
-/* skill-section */
+/*---------- skill-section ----------*/
 
 .skill-item {
   display: flex;
@@ -237,7 +268,7 @@ p {
   color: var(--second-text-color);
 }
 
-/* work-section */
+/*---------- work-section ----------*/
 
 .work-section {
   padding-top: 0px;
@@ -287,7 +318,7 @@ p {
   height: 294px;
 }
 
-/* team-section */
+/*---------- team-section ----------*/
 
 .team-section {
   background: #f5f4fa;
@@ -358,6 +389,9 @@ p {
   background: var(--white-text-color);
   fill: #afb1b8;
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-style:hover,
@@ -366,14 +400,13 @@ p {
   fill: #ffffff;
 }
 
-/* clients section */
+/*---------- clients section ----------*/
 
 .clients-section-title {
-  font-family: 'Roboto';
   font-style: 400;
   font-weight: 700;
   font-size: 36px;
-  line-height: 42px;
+  line-height: 1.16;
   text-align: center;
   letter-spacing: 0.03em;
 
@@ -395,7 +428,9 @@ p {
   align-items: center;
   justify-content: center;
   color: #afb1b8;
-  /* fill: #afb1b8; */
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon {
@@ -408,7 +443,7 @@ p {
   border-color: var(--accent-color);
 }
 
-/* Основной контент - портфолио*/
+/*-------- Основной контент - портфолио --------*/
 
 .button-list {
   display: flex;
@@ -432,6 +467,9 @@ p {
   color: var(--primary-text-color);
   cursor: pointer;
   border: 1px solid transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-section-button:hover,
@@ -442,7 +480,7 @@ p {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-/* Карточки */
+/*---------- Карточки ----------*/
 
 .project-list {
   display: flex;
@@ -456,6 +494,41 @@ p {
   margin-bottom: 30px;
   background: #ffffff;
   border: 1px solid #eeeeee;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  display: inline-block;
+  content: '';
+  padding: 63px 24px;
+
+  font-style: 400;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--white-text-color);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-item:hover .project-overlay,
+.project-item:focus .project-overlay {
+  transform: translatey(0%);
 }
 
 .project-item:nth-child(3n) {
@@ -487,12 +560,13 @@ p {
   padding: 20px 24px;
 }
 
-.project-item:hover {
+.project-item:hover,
+.project-item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-/* Футер общий*/
+/*---------- Футер общий ----------*/
 
 .footer-section {
   background-color: #2f303a;
@@ -525,6 +599,13 @@ p {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--white-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-adress-style:hover,
+.footer-adress-style:focus {
+  color: var(--accent-color);
 }
 
 .footer-contacts-style {
@@ -534,6 +615,13 @@ p {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-contacts-style:hover,
+.footer-contacts-style:focus {
+  color: var(--accent-color);
 }
 
 .list-style a {
@@ -580,6 +668,8 @@ p {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   justify-content: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icon-style {
