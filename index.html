@@ -71,7 +71,7 @@
             Эфективные решения <br />
             для вашего бизнеса
           </h1>
-          <button type="button" class="hero-section-button">Заказать услугу</button>
+          <button data-modal-open type="button" class="hero-section-button">Заказать услугу</button>
         </div>
       </section>
 
@@ -171,11 +171,17 @@
         <div class="container">
           <h2 class="team-section-title">Наша команда</h2>
           <ul class="list-style">
-            <li class="team-section-item">
-              <img src="./images/igor.jpg" alt="Игорь Демьяненко" width="270" />
-              <h3 class="team-section-person">Игорь Демьяненко</h3>
-              <p class="team-section-text">Product Designer</p>
-              <div>
+            <li class="team-section-list">
+              <img
+                class="team-section-image"
+                src="./images/igor.jpg"
+                alt="Игорь Демьяненко"
+                width="270"
+              />
+              <div class="team-section-item">
+                <h3 class="team-section-person">Игорь Демьяненко</h3>
+                <p class="team-section-text">Product Designer</p>
+
                 <ul class="social-link">
                   <li class="social-link-item">
                     <a class="social-link-style" href="#"
@@ -209,11 +215,17 @@
               </div>
             </li>
 
-            <li class="team-section-item">
-              <img src="./images/olga.jpg" alt="Ольга Репина" width="270" />
-              <h3 class="team-section-person">Ольга Репина</h3>
-              <p class="team-section-text">Frontend Developer</p>
-              <div>
+            <li class="team-section-list">
+              <img
+                class="team-section-image"
+                src="./images/olga.jpg"
+                alt="Ольга Репина"
+                width="270"
+              />
+              <div class="team-section-item">
+                <h3 class="team-section-person">Ольга Репина</h3>
+                <p class="team-section-text">Frontend Developer</p>
+
                 <ul class="social-link">
                   <li class="social-link-item">
                     <a class="social-link-style" href="#"
@@ -247,11 +259,17 @@
               </div>
             </li>
 
-            <li class="team-section-item">
-              <img src="./images/nikolai.jpg" alt="Николай Тарасов" width="270" />
-              <h3 class="team-section-person">Николай Тарасов</h3>
-              <p class="team-section-text">Marketing</p>
-              <div>
+            <li class="team-section-list">
+              <img
+                class="team-section-image"
+                src="./images/nikolai.jpg"
+                alt="Николай Тарасов"
+                width="270"
+              />
+              <div class="team-section-item">
+                <h3 class="team-section-person">Николай Тарасов</h3>
+                <p class="team-section-text">Marketing</p>
+
                 <ul class="social-link">
                   <li class="social-link-item">
                     <a class="social-link-style" href="#"
@@ -285,11 +303,17 @@
               </div>
             </li>
 
-            <li class="team-section-item">
-              <img src="./images/mihail.jpg" alt="Михаил Ермаков" width="270" />
-              <h3 class="team-section-person">Михаил Ермаков</h3>
-              <p class="team-section-text">UI Designer</p>
-              <div>
+            <li class="team-section-list">
+              <img
+                class="team-section-image"
+                src="./images/mihail.jpg"
+                alt="Михаил Ермаков"
+                width="270"
+              />
+              <div class="team-section-item">
+                <h3 class="team-section-person">Михаил Ермаков</h3>
+                <p class="team-section-text">UI Designer</p>
+
                 <ul class="social-link">
                   <li class="social-link-item">
                     <a class="social-link-style" href="#"
@@ -448,5 +472,19 @@
         </div>
       </div>
     </footer>
+
+    <!------------ modal ------------>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button data-modal-close type="button" class="modal-btn">
+          <span hidden>btn</span>
+          <svg class="c-icon" width="30" height="30">
+            <use href="./images/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
